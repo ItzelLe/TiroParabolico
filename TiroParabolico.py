@@ -59,7 +59,7 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            targets[targets.index(target)].x = 500
 
     ontimer(move, 50)
 
