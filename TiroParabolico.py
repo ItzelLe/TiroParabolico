@@ -5,10 +5,11 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
+#Velocidad solicitada al usuario
 vBall= float(input())
 vTarget=float(input())
 
-def tap(x, y):
+def tap(x, y):#Funcion para que la bola reaccione al tap del usuario
     "Respond to screen tap."
     if not inside(ball):
         ball.x = -199
@@ -20,7 +21,7 @@ def inside(xy):
     "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
-def draw():
+def draw():#Dibuja la bola y los objetivos
     "Draw ball and targets."
     clear()
 
@@ -34,7 +35,7 @@ def draw():
 
     update()
 
-def move():
+def move(): #esta funcione tiene la velocidad escodiga por el usuario y el tiempo escogido
     "Move ball and targets."
     if randrange(40) == 0:
         y = randrange(-150, 150)
@@ -63,6 +64,7 @@ def move():
 
     ontimer(move, 50)
 
+#Cracteristicas del juego
 setup(420, 420, 370, 0)
 hideturtle()
 up()
